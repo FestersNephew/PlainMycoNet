@@ -1,0 +1,180 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #F2F2F2;
+  color: #333333;
+}
+
+/* Header */
+header {
+  background-color: #625233;
+  color: white;
+  text-align: center;
+  padding: 0.1rem;
+}
+
+header h1 {
+  font-family: 'Bungee Inline', cursive;
+  font-size: 4rem;
+  margin-bottom: 0.1rem;
+}
+
+header nav {
+  display: flex;
+  justify-content: center;
+}
+
+header ul {
+  display: flex;
+}
+
+header li {
+  margin: 0 1rem;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Bungee Inline', cursive;
+  font-size: 1.2rem;
+}
+
+header a:hover {
+  color: #ccc;
+}
+
+/* Main Content */
+main {
+  background-color: #181212;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+}
+
+.features {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.feature {
+  flex-basis: 30%;
+  margin: 1rem;
+  text-align: center;
+}
+
+.feature h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.feature p {
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 40px 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-info h3,
+.social-media h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.contact-info p {
+  margin: 0;
+  font-size: 1.1em;
+}
+
+.social-media-icons {
+  display: flex;
+  justify-content: center;
+}
+
+.social-media-icons a {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 1.5rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.social-media-icons a:hover {
+  color: #ddd;
+}
+
+.social-media-icons i {
+  transition: color 0.3s ease-in-out;
+}
+
+.fa-facebook {
+  color: #3b5998;
+}
+
+.fa-twitter {
+  color: #1da1f2;
+}
+
+.fa-instagram {
+  color: #e4405f;
+}
+
+.fa-linkedin {
+  color: #0077b5;
+}
+
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #fff;
+  font-size: 0.8em;
+}
+
+
+.textbox {
+  font-family: 'Bungee Inline', cursive;
+  background-color: #2b3a27;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.textbox h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.textbox p {
+  font-family: 'Bungee Inline', cursive;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  margin-bottom: 1rem;
+}
