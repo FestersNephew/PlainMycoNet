@@ -13,8 +13,8 @@ body {
 
 /* Header */
 header {
-  background-color: #625233;
-  color: white;
+  background-color: #181312;
+  color: #bba97a;
   text-align: center;
   padding: 0.1rem;
 }
@@ -39,19 +39,75 @@ header li {
 }
 
 header a {
-  color: white;
+  color: #bba97a;
   text-decoration: none;
   font-family: 'Bungee Inline', cursive;
   font-size: 1.2rem;
 }
 
 header a:hover {
-  color: #ccc;
+  color: #4a5a3f;
 }
 
 /* Main Content */
 main {
   background-color: #181212;
+  position: relative;
+  overflow: hidden;
+}
+
+.textbox {
+  font-family: 'Bungee Inline', cursive;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 10px;
+  background: #bba97a;
+  box-shadow: -10px -10px 10px rgba(245, 245, 245, 0.1), 10px 10px 10px rgba(0, 0, 0, 0.2);
+  top: calc(100% - 50px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  opacity: 1;
+  animation: fadeout 5s linear reverse;
+  max-height: calc(100% - 150px);
+  top: 0;
+  position: absolute;
+
+}
+
+.textbox h2 {
+  font-size: 2rem;
+  color: #2b3a27;
+  margin-bottom: 1rem;
+}
+
+.textbox p {
+  font-family: 'Bungee Inline', cursive;
+  color: #2b3a27;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  80% {
+    opacity: 1;
+    transform: translate(-50%, -150%);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -150%);
+  }
+}
+
+.hero {
+  position: relative;
 }
 
 .hero img {
@@ -59,6 +115,7 @@ main {
   height: auto;
 }
 
+/* Features */
 .features {
   max-width: 1200px;
   margin: 0 auto;
@@ -78,20 +135,20 @@ main {
 .feature h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: white;
+  color: #89734c;
 }
 
 .feature p {
   font-size: 1.2rem;
   line-height: 1.5rem;
   margin-bottom: 1rem;
-  color: white;
+  color: #89734c;
 }
 
 /* Footer */
 footer {
-  background-color: #333;
-  color: #fff;
+  background-color: #3c2318;
+  color: #bba97a;
   padding: 40px 20px;
 }
 
@@ -149,7 +206,6 @@ footer {
   color: #0077b5;
 }
 
-
 .footer-bottom {
   text-align: center;
   margin-top: 20px;
@@ -158,23 +214,3 @@ footer {
   font-size: 0.8em;
 }
 
-
-.textbox {
-  font-family: 'Bungee Inline', cursive;
-  background-color: #2b3a27;
-  color: white;
-  padding: 1rem;
-  text-align: center;
-}
-
-.textbox h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.textbox p {
-  font-family: 'Bungee Inline', cursive;
-  font-size: 1.2rem;
-  line-height: 1.5rem;
-  margin-bottom: 1rem;
-}
