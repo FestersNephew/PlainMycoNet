@@ -33,42 +33,43 @@ textboxContainer.classList.add('textbox-container');
 textbox.parentNode.insertBefore(textboxContainer, textbox);
 textboxContainer.appendChild(textbox);
 
-textbox.style.top = '450px';
+textbox.style.top = '550px';
 
-const scrollAmount = textboxContainer.scrollHeight - textboxContainer.offsetHeight;
+const scrollDistance = 600; // set the distance to scroll down to 600px
 const duration = 10000; // set duration to 10 seconds
 let isScrolling = true;
+let isAtBottom = false;
 
 function scrollTextbox() {
   if (isScrolling) {
-    const currentTime = Date.now();
-    const endTime = currentTime + duration;
+    const startTime = performance.now();
+    const animateScroll = (currentTime) => {
+      const elapsed = currentTime - startTime;
+      const scrollFraction = elapsed / duration;
+      const scrollAmount = scrollFraction * scrollDistance;
 
-    function animateScroll() {
-      const elapsed = endTime - Date.now();
-      const remaining = scrollAmount * (elapsed / duration);
-      textboxContainer.scrollTop = remaining;
+      textboxContainer.scrollTop = scrollAmount;
 
-      if (elapsed < 0) {
+      if (scrollAmount >= scrollDistance) {
+        isAtBottom = true;
         clearInterval(scrollTimer);
-        isScrolling = false;
-        setTimeout(() => {
-          textbox.classList.remove('fadein');
-          textbox.classList.add('fadeout');
-          setTimeout(() => {
-            textboxContainer.parentNode.removeChild(textboxContainer);
-          }, 2000);
-        }, 2000);
       }
     }
 
-    const scrollTimer = setInterval(animateScroll, 50);
+    const scrollTimer = setInterval(() => {
+      const currentTime = performance.now();
+      animateScroll(currentTime);
+    }, 20);
   }
 }
 
-// Add a click event listener to the textbox container to toggle scrolling on/off
-textboxContainer.addEventListener('click', () => {
-  isScrolling = !isScrolling;
-});
+function stopTextbox() {
+  if (!isAtBottom) {
+    isScrolling = false;
+  }
+}
+
+// Add a mousedown event listener to the textbox container to stop the scrolling
+textboxContainer.addEventListener('mousedown', stopTextbox);
 
 scrollTextbox();
