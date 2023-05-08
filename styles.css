@@ -89,8 +89,6 @@ main {
   margin-bottom: 1rem;
 }
 
-
-
 @keyframes fadeout {
   0% {
     opacity: 1;
@@ -214,3 +212,29 @@ footer {
   font-size: 0.8em;
 }
 
+.trigger {
+  position: relative;
+}
+
+.root-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1; /* make sure the animation is above the image */
+}
+
+.root-frame {
+  height: 100%;
+  display: block;
+  margin: auto;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+}
+
+.animate__animated {
+  animation-duration: 0.5s;
+}
+
+.animate__fadeIn {
+  opacity: 0;
+  animation-name: animate__fadeIn;
+}

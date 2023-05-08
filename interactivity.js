@@ -33,44 +33,33 @@ textboxContainer.classList.add('textbox-container');
 textbox.parentNode.insertBefore(textboxContainer, textbox);
 textboxContainer.appendChild(textbox);
 
-textbox.style.top = '550px';
-
-const scrollDistance = 600; // set the distance to scroll down to 600px
-const duration = 10000; // set duration to 10 seconds
-let isScrolling = true;
 let isAtBottom = false;
+const maxScrollDistance = textboxContainer.scrollHeight - textboxContainer.clientHeight;
 
-function scrollTextbox() {
-  if (isScrolling) {
-    const startTime = performance.now();
-    const animateScroll = (currentTime) => {
-      const elapsed = currentTime - startTime;
-      const scrollFraction = elapsed / duration;
-      const scrollAmount = scrollFraction * scrollDistance;
-
-      textboxContainer.scrollTop = scrollAmount;
-
-      if (scrollAmount >= scrollDistance) {
-        isAtBottom = true;
-        clearInterval(scrollTimer);
-      }
+function scrollTextbox(scrollDistance, duration) {
+  const scrollTween = gsap.to(textboxContainer, {
+    scrollTop: scrollDistance,
+    duration: duration,
+    ease: "power2.inOut",
+    onComplete: () => {
+      isAtBottom = true;
     }
+  });
 
-    const scrollTimer = setInterval(() => {
-      const currentTime = performance.now();
-      animateScroll(currentTime);
-    }, 20);
-  }
+  // Add a mousedown event listener to the textbox container to stop the scrolling
+  textboxContainer.addEventListener('mousedown', () => {
+    console.log('mousedown triggered');
+    scrollTween.kill();
+    stopTextbox();
+  });
 }
 
 function stopTextbox() {
-  if (!isAtBottom) {
-    isScrolling = false;
+  if (textboxContainer.scrollTop === maxScrollDistance) {
+    isAtBottom = true;
+  } else {
+    gsap.killTweensOf(textboxContainer);
   }
 }
 
-// Add a mousedown event listener to the textbox container to stop the scrolling
-textboxContainer.addEventListener('mousedown', stopTextbox);
-
-scrollTextbox();
-
+scrollTextbox(2100, 10000); // distance and duration in milliseconds
