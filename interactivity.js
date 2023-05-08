@@ -73,3 +73,4 @@ function stopTextbox() {
 textboxContainer.addEventListener('mousedown', stopTextbox);
 
 scrollTextbox();
+
