@@ -118,39 +118,34 @@ main {
   max-width: 1200px;
   margin: 0 auto;
   padding: 1rem;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  align-items: flex-end;
-  position: relative; /* Add position relative */
-  top: -250px; /* Adjust the vertical position */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 1rem; /* Added grid-gap property */
+  justify-items: center;
+  align-items: flex-start;
+  position: relative;
+  top: -250px;
   margin-bottom: -15rem;
 }
 
 .feature {
-  flex-basis: calc(50% - 2rem);
-  margin: 1rem;
   text-align: center;
-  position: relative; /* Add position relative */
-  z-index: 1; /* Ensure feature sections are above the tree image */
+  position: relative;
+  z-index: 1;
 }
 
-
 .feature h2 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin-bottom: 1rem;
   color: #bfa97a;
 }
 
 .feature p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1.5rem;
   margin-bottom: 1rem;
   color: #bfa97a;
 }
-
-/* Rest of the CSS remains unchanged */
-
 
 /* Footer */
 footer {
