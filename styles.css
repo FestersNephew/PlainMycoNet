@@ -115,12 +115,12 @@ main {
 
 /* Features */
 .features {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 1rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 1rem; /* Added grid-gap property */
+  grid-gap: 5rem; /* Added grid-gap property */
   justify-items: center;
   align-items: flex-start;
   position: relative;
@@ -129,7 +129,7 @@ main {
 }
 
 .feature1, .feature2 {
-  text-align: center;
+  text-align: justify;
   position: relative;
   z-index: 1;
 }
@@ -138,12 +138,14 @@ main {
   font-size: 1.8rem;
   margin-bottom: 1rem;
   color: #365e1a;
+  text-align: center;
 }
 
 .feature2 h2 {
   font-size: 1.8rem;
   margin-bottom: 1rem;
   color: #bfa97a;
+  text-align: center;
 }
 
 .feature1 p {
